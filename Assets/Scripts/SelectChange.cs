@@ -21,7 +21,7 @@ public class SelectChange : MonoBehaviour
     private bool isPlayButtonClicked = false;
     private float gameCount = 5f;
 
-    private static string CharactorName;
+    //private static string CharactorName;
 
     private void Start()
     {
@@ -45,7 +45,8 @@ public class SelectChange : MonoBehaviour
     {
         GameStart.SetActive(true);
         isPlayButtonClicked = true;
-        CharactorName = Charcters[charindex].name;
+        GameManager.Instance.ChararterName = Charcters[charindex].name;
+        //CharactorName = Charcters[charindex].name;
     }
 
     public void selectCharaterRtn(string btnNase)

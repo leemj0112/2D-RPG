@@ -65,20 +65,34 @@ public class Charator : MonoBehaviour
             JustAttack = false;
             animator.SetTrigger("Attack");
             audioSource.PlayOneShot(AttackClip);
-
-            if (spriteRenderer.flipX)
+            if (gameObject.name == "Warrior")
             {
-                GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 180f, 0));
-                obj.GetComponent<Rigidbody2D>().AddForce(Vector2.left * AttckSpeed, ForceMode2D.Impulse);
-                Destroy(obj, 3f);
+                AttackObj.SetActive(true);
+                Invoke("SetAttackObjInactive", 0.5f);
             }
-            else 
+
+            else
             {
-                GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 0, 0));
-                obj.GetComponent<Rigidbody2D>().AddForce(Vector2.right * AttckSpeed, ForceMode2D.Impulse);
-                Destroy(obj, 3f);
+
+                if (spriteRenderer.flipX)
+                {
+                    GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 180f, 0));
+                    obj.GetComponent<Rigidbody2D>().AddForce(Vector2.left * AttckSpeed, ForceMode2D.Impulse);
+                    Destroy(obj, 3f);
+                }
+                else
+                {
+                    GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 0, 0));
+                    obj.GetComponent<Rigidbody2D>().AddForce(Vector2.right * AttckSpeed, ForceMode2D.Impulse);
+                    Destroy(obj, 3f);
+                }
             }
         }
+    }
+
+    private void SetAttackObjInactive()
+    {
+        AttackObj.SetActive(false);
     }
 
     private void AttackCheck()
