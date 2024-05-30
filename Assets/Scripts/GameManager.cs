@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public string ChararterName;
     public string UserID;
 
-    public float PlayerHp = 100f;
-    public float PlayerExp = 1f;
+    public float PlayerHp = 100f; //체력
+    public float PlayerExp = 1f; //경험치
 
     private void Awake()
     {
