@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -11,6 +12,8 @@ public class Monster : MonoBehaviour
     public float MonsterDamage = 4f;
     public float MonsterExp = 3f;
     private bool IsDie = false;
+
+    public GameObject[] ItemObj; //마나, 체력, 코인
 
     private Animator MonsterAnimator;
 
@@ -47,6 +50,13 @@ public class Monster : MonoBehaviour
         IsDie = true;
         MonsterAnimator.SetTrigger("DIe");
         GameManager.Instance.PlayerExp += MonsterExp;
+
+        int ItemRandom = Random.Range(0, ItemObj.Length * 2);
+        if (ItemRandom < ItemObj.Length)
+        {
+            Instantiate(ItemObj[ItemRandom], new Vector3(transform.position.x, transform.position.y,0), Quaternion.identity);
+            Debug.Log("아이템 생성됌");
+        }
 
         GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject, 2f); //이동 애니메이션 재생 시간 보장
