@@ -28,7 +28,7 @@ public class Item : MonoBehaviour
             else if (gameObject.tag == "HP")
             {
                 GameManager.Instance.PlayerHp += 10;
-                Debug.Log("플레이어 HP:" + GameManager.Instance.Coin);
+                Debug.Log("플레이어 HP:" + GameManager.Instance.PlayerHp);
                 Destroy(gameObject);
 
             }

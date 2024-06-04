@@ -12,11 +12,13 @@ public class PlayerUI : MonoBehaviour
 
     private GameObject player;
 
+    public GameObject spawnPos;
+
     void Start()
     {
         IDtext.text = GameManager.Instance.UserID;
-        GameObject playerPrefab = Resources.Load<GameObject>("Characters/" + GameManager.Instance.ChararterName);
-        player = Instantiate(playerPrefab);
+        player = GameManager.Instance.SpawnPlayer(spawnPos.transform);
+       
     }
 
     void Update()
