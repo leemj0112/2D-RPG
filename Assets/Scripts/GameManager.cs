@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +11,11 @@ public class GameManager : MonoBehaviour
 
     public float PlayerHp = 100f; //체력
     public float PlayerExp = 1f; //경험치
-    public int Coin = 0;
+
+    public int Coin = 0; //코인
+    public int monsterCount; //남은 적 수
+
+    public GameObject ClearPanel;
 
 
     private void Awake()
@@ -31,9 +37,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
+ 
     public GameObject SpawnPlayer(Transform spawnPos)
     {
         GameObject playerPrefab = Resources.Load<GameObject>("Characters/" + GameManager.Instance.ChararterName);

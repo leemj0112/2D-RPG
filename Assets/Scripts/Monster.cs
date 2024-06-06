@@ -20,6 +20,7 @@ public class Monster : MonoBehaviour
     void Start()
     {
         MonsterAnimator = GetComponent<Animator>();
+        GameManager.Instance.monsterCount = 5;
     }
 
     void Update()
@@ -54,12 +55,16 @@ public class Monster : MonoBehaviour
         int ItemRandom = Random.Range(0, ItemObj.Length * 2);
         if (ItemRandom < ItemObj.Length)
         {
-            Instantiate(ItemObj[ItemRandom], new Vector3(transform.position.x, transform.position.y,0), Quaternion.identity);
+            //죽은 위치에 아이템 생성
+            Instantiate(ItemObj[ItemRandom], new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             Debug.Log("아이템 생성됌");
         }
 
         GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject, 2f); //이동 애니메이션 재생 시간 보장
+
+        GameManager.Instance.monsterCount--; //몬스터 카운트 소모
+        Debug.Log(GameManager.Instance.monsterCount); //몬스터 남은 수
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

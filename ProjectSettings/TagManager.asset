@@ -9,8 +9,8 @@ TagManager:
   - Ladder
   - Coin
   - HP
-  - axe
   - Boots
+  - axe
   layers:
   - Default
   - TransparentFX

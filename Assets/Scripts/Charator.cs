@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Charator : MonoBehaviour
 {
+    public static Charator instance;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody2D;

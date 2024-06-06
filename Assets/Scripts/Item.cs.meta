@@ -3,7 +3,9 @@ guid: bf32783b89fdfe242837f8adc37454ec
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - AudioSource: {instanceID: 0}
+  - ItemEat: {fileID: 8300000, guid: 341071ab4f12b1e4bbd56d110e7fde1d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
