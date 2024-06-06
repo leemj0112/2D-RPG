@@ -25,7 +25,7 @@ public class Item : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            else if (gameObject.tag == "HP")
+            if (gameObject.tag == "HP")
             {
                 GameManager.Instance.PlayerHp += 10;
                 Debug.Log("플레이어 HP:" + GameManager.Instance.PlayerHp);
