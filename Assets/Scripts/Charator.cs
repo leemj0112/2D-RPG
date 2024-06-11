@@ -6,7 +6,7 @@ public class Charator : MonoBehaviour
     public static Charator instance;
 
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody2D;
     private AudioSource audioSource;
 
@@ -21,6 +21,7 @@ public class Charator : MonoBehaviour
     private float inputVertical;
 
     private bool JustAttack, JustJump;
+    public bool faceRight = true;
 
     public GameObject AttackObj;
     public float AttckSpeed = 3f;
@@ -28,7 +29,7 @@ public class Charator : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -128,14 +129,14 @@ public class Charator : MonoBehaviour
             audioSource.PlayOneShot(AttackClip);
             if (gameObject.name == "Warrior")
             {
-                AttackObj.SetActive(true);
+                AttackObj.GetComponent<Collider2D>().enabled = true;
                 Invoke("SetAttackObjInactive", 0.5f);
             }
 
             else
             {
 
-                if (spriteRenderer.flipX)
+                if (faceRight)
                 {
                     GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 180f, 0));
                     obj.GetComponent<Rigidbody2D>().AddForce(Vector2.left * AttckSpeed, ForceMode2D.Impulse);
@@ -153,7 +154,7 @@ public class Charator : MonoBehaviour
 
     private void SetAttackObjInactive()
     {
-        AttackObj.SetActive(false);
+        AttackObj.GetComponent<Collider2D>().enabled = false;
     }
 
     private void AttackCheck()
@@ -172,28 +173,28 @@ public class Charator : MonoBehaviour
         {
             transform.Translate(Vector3.right * Speed * Time.deltaTime);
             animator.SetBool("Move", true);
+            if (!faceRight) Filp();
         }
 
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * Speed * Time.deltaTime);
             animator.SetBool("Move", true);
+            if (faceRight) Filp();
         }
         else
         {
             animator.SetBool("Move", false);
         }
+    }
 
-        //좌우 이동에 따른 반전
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            spriteRenderer.flipX = false;
-        }
+    private void Filp()
+    {
+        faceRight = !faceRight;
 
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            spriteRenderer.flipX = true;
-        }
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
 
