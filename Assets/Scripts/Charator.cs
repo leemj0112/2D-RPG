@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Charator : MonoBehaviour
 {
-    public static Charator instance;
-
     private Animator animator;
     //private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody2D;
@@ -13,7 +11,7 @@ public class Charator : MonoBehaviour
     public AudioClip JumpClip;
 
     public float Speed = 4f;
-    public float JumpPower = 6f;
+    public float JumpPower = 3f;
 
     private bool isFloor;
     private bool isLadder;
@@ -127,25 +125,24 @@ public class Charator : MonoBehaviour
             JustAttack = false;
             animator.SetTrigger("Attack");
             audioSource.PlayOneShot(AttackClip);
-            if (gameObject.name == "Warrior")
+            if (gameObject.name == "Warrior(Clone)")
             {
                 AttackObj.GetComponent<Collider2D>().enabled = true;
                 Invoke("SetAttackObjInactive", 0.5f);
             }
-
             else
             {
 
                 if (faceRight)
                 {
                     GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 180f, 0));
-                    obj.GetComponent<Rigidbody2D>().AddForce(Vector2.left * AttckSpeed, ForceMode2D.Impulse);
+                    obj.GetComponent<Rigidbody2D>().AddForce(Vector2.right * AttckSpeed, ForceMode2D.Impulse);
                     Destroy(obj, 3f);
                 }
                 else
                 {
                     GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 0, 0));
-                    obj.GetComponent<Rigidbody2D>().AddForce(Vector2.right * AttckSpeed, ForceMode2D.Impulse);
+                    obj.GetComponent<Rigidbody2D>().AddForce(Vector2.left * AttckSpeed, ForceMode2D.Impulse);
                     Destroy(obj, 3f);
                 }
             }

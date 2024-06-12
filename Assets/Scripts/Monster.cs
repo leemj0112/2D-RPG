@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
     void Start()
     {
         MonsterAnimator = GetComponent<Animator>();
-        GameManager.Instance.monsterCount = 5;
+        GameManager.Instance.monsterCount = 8;
     }
 
     void Update()
@@ -70,6 +70,7 @@ public class Monster : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsDie) return;
+
         if (collision.gameObject.tag == "Player")
         {
             MonsterAnimator.SetTrigger("Attack");
@@ -78,6 +79,7 @@ public class Monster : MonoBehaviour
 
         if(collision.gameObject.tag == "Attack")
         {
+            Debug.Log("Attack!! ");
             MonsterAnimator.SetTrigger("Damage");
             MonsterHP -= collision.gameObject.GetComponent<Attack>().AttackDamage;
 

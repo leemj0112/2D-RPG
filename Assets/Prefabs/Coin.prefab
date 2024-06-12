@@ -156,8 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf32783b89fdfe242837f8adc37454ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
-  ItemEat: {fileID: 8300000, guid: 341071ab4f12b1e4bbd56d110e7fde1d, type: 3}
+  ItemEat: {fileID: 8300000, guid: 1c6edd4aa360aa9458fd3b40b2bf4849, type: 3}
 --- !u!82 &-667366268220566296
 AudioSource:
   m_ObjectHideFlags: 0

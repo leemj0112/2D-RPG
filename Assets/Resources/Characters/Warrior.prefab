@@ -199,7 +199,7 @@ MonoBehaviour:
   Speed: 4
   JumpPower: 6
   faceRight: 1
-  AttackObj: {fileID: 6321878679410025674, guid: 7a76e9732ed8c2e44a12f57a78bf019f, type: 3}
+  AttackObj: {fileID: 6447343518585219054}
   AttckSpeed: 3
   AttackClip: {fileID: 8300000, guid: 2145ecd8c07d6724493c969b2cef97ef, type: 3}
 --- !u!82 &3751308574029238285
@@ -355,6 +355,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a76e9732ed8c2e44a12f57a78bf019f, type: 3}
+--- !u!1 &6447343518585219054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6321878679410025674, guid: 7a76e9732ed8c2e44a12f57a78bf019f, type: 3}
+  m_PrefabInstance: {fileID: 1063487157087879972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8215375924292701102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8989364141096077450, guid: 7a76e9732ed8c2e44a12f57a78bf019f, type: 3}

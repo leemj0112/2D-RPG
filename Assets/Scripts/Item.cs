@@ -3,7 +3,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    public AudioSource AudioSource;
+    private AudioSource AudioSource;
     public AudioClip ItemEat;
 
     void Start()
@@ -26,14 +26,14 @@ public class Item : MonoBehaviour
             {
                 GameManager.Instance.Coin += 10;
                 Debug.Log("플레이어 코인:" + GameManager.Instance.Coin);
-                Destroy(gameObject);
+                Destroy(gameObject, 0.3f);
             }
 
             if (gameObject.tag == "Boots")
             {
-                Debug.Log("플레이어 속도 2배");
-                Charator.instance.Speed += 10;
-                Destroy(gameObject);
+                Debug.Log("플레이어 속도 증가");
+                collision.gameObject.GetComponent<Charator>().Speed += 4;
+                Destroy(gameObject, 0.3f);
 
             }
 
@@ -41,14 +41,14 @@ public class Item : MonoBehaviour
             {
                 GameManager.Instance.PlayerHp += 10;
                 Debug.Log("플레이어 HP:" + GameManager.Instance.PlayerHp);
-                Destroy(gameObject);
+                Destroy(gameObject, 0.3f);
             }
 
             if (gameObject.tag == "axe")
             {
-                Debug.Log("플레이어 어택 데미지 2배");
-                Attack.Instance.AttackDamage += 10;
-                Destroy(gameObject);
+                Debug.Log("플레이어 어택 데미지 증가");
+                collision.gameObject.GetComponent<Charator>().AttackObj.GetComponent<Attack>().AttackDamage += 4;
+                Destroy(gameObject, 0.3f);
             }
         }
     }
