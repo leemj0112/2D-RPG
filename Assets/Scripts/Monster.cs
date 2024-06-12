@@ -17,10 +17,11 @@ public class Monster : MonoBehaviour
 
     private Animator MonsterAnimator;
 
+
     void Start()
     {
         MonsterAnimator = GetComponent<Animator>();
-        GameManager.Instance.monsterCount = 8;
+        GameManager.Instance.monsterCount = 9;
     }
 
     void Update()
