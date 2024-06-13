@@ -195,13 +195,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3dbca1d073c6541bf2ef3dcaf99178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpClip: {fileID: 8300000, guid: 458eb593d2f93f5478d66ab3b6c81d82, type: 3}
+  JumpClip: {fileID: 8300000, guid: 7de1342d1bb56db4f9fd505fa97ebd66, type: 3}
   Speed: 4
   JumpPower: 6
   faceRight: 1
   AttackObj: {fileID: 6447343518585219054}
   AttckSpeed: 3
-  AttackClip: {fileID: 8300000, guid: 2145ecd8c07d6724493c969b2cef97ef, type: 3}
+  AttackClip: {fileID: 8300000, guid: 7675b222f7d27fc498837b765038302f, type: 3}
 --- !u!82 &3751308574029238285
 AudioSource:
   m_ObjectHideFlags: 0

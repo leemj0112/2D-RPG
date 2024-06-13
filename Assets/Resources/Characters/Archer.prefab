@@ -194,9 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3dbca1d073c6541bf2ef3dcaf99178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpClip: {fileID: 8300000, guid: 12c8dd7ba7758ea4082e79a65b7db329, type: 3}
+  JumpClip: {fileID: 8300000, guid: 7de1342d1bb56db4f9fd505fa97ebd66, type: 3}
   Speed: 4
   JumpPower: 6
+  faceRight: 1
   AttackObj: {fileID: 4507053605874859682, guid: 60a3c88666531e64e8fc5bf3b9ce6365, type: 3}
   AttckSpeed: 16
   AttackClip: {fileID: 8300000, guid: 458eb593d2f93f5478d66ab3b6c81d82, type: 3}
