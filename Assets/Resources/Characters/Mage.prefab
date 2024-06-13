@@ -199,7 +199,7 @@ MonoBehaviour:
   JumpPower: 6
   faceRight: 1
   AttackObj: {fileID: 1319097074086549261, guid: 6a42f8335a4494e408b69890cb111b10, type: 3}
-  AttckSpeed: 3
+  AttckSpeed: 6
   AttackClip: {fileID: 8300000, guid: 35e7f7f3e452d8f46aa3bd9557c4803c, type: 3}
 --- !u!82 &6965153743875159099
 AudioSource:

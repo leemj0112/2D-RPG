@@ -10,7 +10,7 @@ public class UIBtn : MonoBehaviour
 
      private void Start()
     {
-        IDTextHere.text = "ID: " + GameManager.Instance.UserID;
+        IDTextHere.text = $"ID: { GameManager.Instance.UserID}";
     }
 
     public void GameExitBtn()

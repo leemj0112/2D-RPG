@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public float AttackDamage = 5f;
+    public float  AttackDamage = 5f;
+
+    private void Awake()
+    {
+     
+    }
 }

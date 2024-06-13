@@ -15,4 +15,9 @@ public class TP : MonoBehaviour
             Debug.Log("텔레포트");
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+    }
 }
