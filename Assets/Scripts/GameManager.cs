@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    
 
     public string ChararterName;
     public string UserID;
@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject ClearPanel;
 
+
+    public static GameManager Instance;
 
     private void Awake()
     {
