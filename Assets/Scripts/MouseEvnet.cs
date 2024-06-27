@@ -3,6 +3,7 @@ using UnityEngine;
 public class MouseEvnet : MonoBehaviour
 {
     public GameObject PotionUI;
+    public GameObject PowerUI;
     public GameObject BattleUI;
 
     void Update()
@@ -21,6 +22,7 @@ public class MouseEvnet : MonoBehaviour
                 if (hit.collider.gameObject.name == "PowerNPC")
                 {
                     Debug.Log("PowerNPC º±≈√");
+                    PowerUI.SetActive(true);
                 }
                 else if (hit.collider.gameObject.name == "PotionNPC")
                 {
