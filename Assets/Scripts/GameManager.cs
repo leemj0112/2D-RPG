@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
 
     public float PlayerHp = 100f; //체력
     public float PlayerExp = 1f; //경험치
-    public int Coin = 1000; 
+    public float PlayerMp = 100f; //MP
+    public float PlayerDef = 1f; //방어력
+    public int Coin = 1000;
 
     public GameObject player;
 
@@ -41,5 +43,21 @@ public class GameManager : MonoBehaviour
         player = Instantiate(playerPrefab, spawnPos.position, spawnPos.rotation);
 
         return playerPrefab;
+    }
+
+    public Charator charator
+    {
+        get
+        {
+            return player.GetComponent<Charator>();
+        }
+    }
+
+    public Attack CharaterAttack
+    {
+        get
+        {
+            return charator.AttackObj.GetComponent<Attack>();
+        }
     }
 }

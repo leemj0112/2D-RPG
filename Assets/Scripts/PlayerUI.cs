@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,16 +7,19 @@ public class PlayerUI : MonoBehaviour
     public Text IDtext;
 
     public Slider HpSlider;
+    public Slider MpSlider;
+    public Slider ExpSlider;
 
     private GameObject player;
 
-    public GameObject spawnPos;
+    //public GameObject spawnPos;
 
     void Start()
     {
         IDtext.text = GameManager.Instance.UserID;
-        player = GameManager.Instance.SpawnPlayer(spawnPos.transform);
-       
+        GameObject spwonPos = GameObject.FindGameObjectWithTag("initPos");
+        player = GameManager.Instance.SpawnPlayer(spwonPos.transform);
+
     }
 
     void Update()
@@ -29,6 +30,8 @@ public class PlayerUI : MonoBehaviour
     private void display()
     {
         Charaterimg.sprite = player.GetComponent<SpriteRenderer>().sprite;
-        HpSlider.value =  GameManager.Instance.PlayerHp;
+        HpSlider.value = GameManager.Instance.PlayerHp;
+        MpSlider.value = GameManager.Instance.PlayerMp;
+        ExpSlider.value = GameManager.Instance.PlayerExp;
     }
 }

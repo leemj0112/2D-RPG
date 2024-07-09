@@ -1024,7 +1024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 185086538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &185086538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,7 +1271,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 242018825}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &242018825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,7 +1648,9 @@ MonoBehaviour:
   UserID: aaa
   PlayerHp: 100
   PlayerExp: 1
-  Coin: 1000
+  PlayerMp: 100
+  PlayerDef: 1
+  Coin: 10000
   player: {fileID: 0}
 --- !u!4 &383591258
 Transform:
@@ -3760,7 +3786,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 662562078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &662562078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3964,7 +4002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 673788620}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &673788620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4084,7 +4134,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 685078349}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &685078349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4693,10 +4755,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUICanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5444129433410084366, guid: b81856504310d8941b9656d85d4e9a43, type: 3}
-      propertyPath: spawnPos
-      value: 
-      objectReference: {fileID: 1004068683}
     - target: {fileID: 6887271555904953304, guid: b81856504310d8941b9656d85d4e9a43, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5783,7 +5841,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 970592854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &970592854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6011,7 +6081,7 @@ GameObject:
   - component: {fileID: 1004068684}
   m_Layer: 0
   m_Name: Playerspawn
-  m_TagString: Untagged
+  m_TagString: initPos
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6025,7 +6095,7 @@ Transform:
   m_GameObject: {fileID: 1004068683}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.7, y: -1.72, z: 0}
+  m_LocalPosition: {x: 13, y: -1.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6935,7 +7005,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1233272142}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1233272142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8108,7 +8190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1529941637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1529941637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9299,7 +9393,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1720843938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1720843938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9768,7 +9874,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1786674363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1786674363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10522,7 +10640,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1855108384}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1855108384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10642,7 +10772,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1892951902}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1892951902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10846,7 +10988,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1917995069}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1917995069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11276,7 +11430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 404, y: 42}
+  m_AnchoredPosition: {x: 404, y: 243}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1985297868
@@ -11665,7 +11819,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2126215369}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2126215369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11785,7 +11951,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2135992874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565606329}
+        m_TargetAssemblyTypeName: BackPackManager, Assembly-CSharp
+        m_MethodName: ItenUse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2135992874
 MonoBehaviour:
   m_ObjectHideFlags: 0

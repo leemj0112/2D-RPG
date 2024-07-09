@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BackPackManager : MonoBehaviour
@@ -8,6 +10,10 @@ public class BackPackManager : MonoBehaviour
     public GameObject BackPack_UI;
     public Text CoinText;
     public Image[] ItemImage;
+
+    private int deflitenUsingCOunt = 0;
+    private int SpeedUsingCOunt = 0;
+    private int PowerUsingCOunt = 0;
 
     private ItemData[] InventoryitemDatas;
     private void Awake()
@@ -33,6 +39,57 @@ public class BackPackManager : MonoBehaviour
         }
     }
 
+    IEnumerator Defitem()
+    {
+        deflitenUsingCOunt++;
+        GameManager.Instance.PlayerDef *= 2;
+        GameManager.Instance.charator.GetComponent<SpriteRenderer>().color = Color.blue;
+        Debug.Log("1. PlayerDef:" + GameManager.Instance.PlayerDef);
+        yield return new WaitForSeconds(10f);
+
+        deflitenUsingCOunt--;
+        GameManager.Instance.PlayerDef /= 2;
+        if(deflitenUsingCOunt == 0)
+        {
+            GameManager.Instance.charator.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        Debug.Log("2. PlayerDef:" + GameManager.Instance.PlayerDef);
+    }
+
+    IEnumerator Speed()
+    {
+        SpeedUsingCOunt++;
+        GameManager.Instance.charator.Speed *= 2;
+        GameManager.Instance.charator.GetComponent<SpriteRenderer>().color = Color.red;
+        Debug.Log("1. Speed:" + GameManager.Instance.charator.Speed);
+        yield return new WaitForSeconds(10f);
+
+        SpeedUsingCOunt--;
+        GameManager.Instance.charator.Speed /= 2;
+        if (SpeedUsingCOunt == 0)
+        {
+            GameManager.Instance.charator.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        Debug.Log("2. Speed:" + GameManager.Instance.charator.Speed);
+    }
+
+    IEnumerator Power()
+    {
+        PowerUsingCOunt++;
+        GameManager.Instance.CharaterAttack.AttackDamage *= 2;
+        GameManager.Instance.charator.GetComponent<SpriteRenderer>().color = Color.green;
+        Debug.Log("1. Power:" + GameManager.Instance.CharaterAttack.AttackDamage);
+        yield return new WaitForSeconds(10f);
+
+        PowerUsingCOunt--;
+        GameManager.Instance.CharaterAttack.AttackDamage /= 2;
+        if (PowerUsingCOunt == 0)
+        {
+            GameManager.Instance.charator.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        Debug.Log("2. Power:" + GameManager.Instance.CharaterAttack.AttackDamage);
+    }
+
     public bool AddItem(ItemData item)
     {
         for (int i = 0; i < ItemImage.Length; i++)
@@ -46,4 +103,56 @@ public class BackPackManager : MonoBehaviour
         }
         return false;
     }
+
+    public void ItenUse()
+    {
+        int siblingIndex = EventSystem.current.currentSelectedGameObject.transform.parent.GetSiblingIndex();
+        ItemData InventoryItem = InventoryitemDatas[siblingIndex];
+        if (InventoryItem == null) { return; }
+
+        if (InventoryItem.ItemID == "HP")
+        {
+            GameManager.Instance.PlayerHp += 100f;
+            GameManager.Instance.PlayerHp = Mathf.Min(GameManager.Instance.PlayerHp, 100f);
+            PopupMsgManager.instance.ShowPopupMassage("체력이 10 회복 되었습니다.");
+        }
+
+        else if (InventoryItem.ItemID == "MP")
+        {
+            GameManager.Instance.PlayerMp += 100f;
+            GameManager.Instance.PlayerMp = Mathf.Min(GameManager.Instance.PlayerMp, 100f);
+            PopupMsgManager.instance.ShowPopupMassage("마나가 10 회복 되었습니다.");
+        }
+
+        else if (InventoryItem.ItemID == "HP_Power")
+        {
+            GameManager.Instance.PlayerHp = 100f;
+            PopupMsgManager.instance.ShowPopupMassage("체력이 전부 회복 되었습니다.");
+        }
+
+        else if (InventoryItem.ItemID == "MP_Power")
+        {
+            GameManager.Instance.PlayerMp = 100f;
+            PopupMsgManager.instance.ShowPopupMassage("마나가 전부 회복 되었습니다.");
+        }
+        else if(InventoryItem.ItemID == "Def")
+        {
+            StartCoroutine(Defitem());
+        }
+        else if (InventoryItem.ItemID == "Power")
+        {
+            StartCoroutine(Power());
+        }
+        else if (InventoryItem.ItemID == "Speed")
+        {
+            StartCoroutine(Speed());
+        }
+        else { Debug.LogError($"존재하지 않는 아이템 ID: {InventoryItem.ItemID}");
+            return;
+        }
+        InventoryitemDatas[siblingIndex] = null;
+        EventSystem.current.currentSelectedGameObject.GetComponent<Image>().sprite = null;
+        
+    }
+
 }

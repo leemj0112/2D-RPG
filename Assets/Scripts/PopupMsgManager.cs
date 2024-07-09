@@ -24,7 +24,6 @@ public class PopupMsgManager : MonoBehaviour
         panel.SetActive(true);
         popupText.text = message;
         StartCoroutine(HideMessareAfterDelay());
-
     }
 
     IEnumerator HideMessareAfterDelay()

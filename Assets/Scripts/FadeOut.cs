@@ -30,6 +30,7 @@ public class FadeOut : MonoBehaviour
         }
 
         BackGroundSourse.Play();
+        FadeImage.gameObject.SetActive(false);
     }
 }
 
