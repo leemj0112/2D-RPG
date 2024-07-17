@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Charator : MonoBehaviour
@@ -23,10 +24,13 @@ public class Charator : MonoBehaviour
     public GameObject AttackObj;
     public float AttckSpeed = 3f;
     public AudioClip AttackClip;
+
+    private bool faceright = true;
+
     void Start()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -133,7 +137,7 @@ public class Charator : MonoBehaviour
             else
             {
 
-                if (spriteRenderer.flipX)
+                if (!faceright)
                 {
                     GameObject obj = Instantiate(AttackObj, transform.position, Quaternion.Euler(0, 180f, 0));
                     obj.GetComponent<Rigidbody2D>().AddForce(Vector2.left * AttckSpeed, ForceMode2D.Impulse);
@@ -170,28 +174,28 @@ public class Charator : MonoBehaviour
         {
             transform.Translate(Vector3.right * Speed * Time.deltaTime);
             animator.SetBool("Move", true);
+            if (!faceright) { Flip(); }
         }
 
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * Speed * Time.deltaTime);
             animator.SetBool("Move", true);
+            if (faceright) { Flip(); }
         }
         else
         {
             animator.SetBool("Move", false);
         }
+    }
 
-        //좌우 이동에 따른 반전
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            spriteRenderer.flipX = false;
-        }
+    private void Flip()
+    {
+        faceright = !faceright;
 
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            spriteRenderer.flipX = true;
-        }
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
 

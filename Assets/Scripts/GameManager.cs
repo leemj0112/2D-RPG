@@ -1,18 +1,26 @@
 using UnityEngine;
 
+[System.Serializable]
+public class CharterStat
+{
+    public float Hp = 100f; //체력
+    public float Exp = 1f; //경험치
+    public float Mp = 100f; //MP
+    public float Def = 1f; //방어력
+    public int Lv = 1; //레벨
+    public int Coin = 1000; //코인
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public string ChararterName;
+    public Define.Player SelectPalyer;
     public string UserID;
 
-    public float PlayerHp = 100f; //체력
-    public float PlayerExp = 1f; //경험치
-    public float PlayerMp = 100f; //MP
-    public float PlayerDef = 1f; //방어력
-    public int Coin = 1000;
+    public CharterStat PlayerStat = new CharterStat();
 
+    [HideInInspector] 
     public GameObject player;
 
     private void Awake()
@@ -39,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject SpawnPlayer(Transform spawnPos)
     {
-        GameObject playerPrefab = Resources.Load<GameObject>("Characters/" + GameManager.Instance.ChararterName);
+        GameObject playerPrefab = Resources.Load<GameObject>("Characters/" + SelectPalyer.ToString());
         player = Instantiate(playerPrefab, spawnPos.position, spawnPos.rotation);
 
         return playerPrefab;

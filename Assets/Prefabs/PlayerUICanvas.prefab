@@ -1023,8 +1023,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -829, y: 250}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -802.4821, y: 235.72113}
+  m_SizeDelta: {x: 213.0358, y: 58.5577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6294492112234589676
 CanvasRenderer:
@@ -1123,6 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Charaterimg: {fileID: 2910045781918219730}
   IDtext: {fileID: 5341840875550399691}
+  LvText: {fileID: 3711524523076536696}
   HpSlider: {fileID: 5798785128265411309}
   MpSlider: {fileID: 1649846474369097623}
   ExpSlider: {fileID: 8104592537574333392}
@@ -1275,8 +1276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.1, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 13.7401, y: -2.0631}
+  m_SizeDelta: {x: 98.4344, y: 104.1261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4376099176838400823
 CanvasRenderer:

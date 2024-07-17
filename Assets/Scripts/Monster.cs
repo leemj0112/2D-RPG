@@ -49,7 +49,7 @@ public class Monster : MonoBehaviour
     {
         IsDie = true;
         MonsterAnimator.SetTrigger("DIe");
-        GameManager.Instance.PlayerExp += MonsterExp;
+        GameManager.Instance.PlayerStat.Exp += MonsterExp;
 
         int ItemRandom = Random.Range(0, ItemObj.Length * 2);
         if (ItemRandom < ItemObj.Length)
@@ -68,7 +68,7 @@ public class Monster : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             MonsterAnimator.SetTrigger("Attack");
-            GameManager.Instance.PlayerHp -= MonsterDamage;
+            GameManager.Instance.PlayerStat.Hp -= MonsterDamage;
         }
 
         if(collision.gameObject.tag == "Attack")

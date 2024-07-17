@@ -10,15 +10,15 @@ public class Item : MonoBehaviour
         {
             if(gameObject.tag == "Coin")
             {
-                GameManager.Instance.Coin += 10;
-                Debug.Log("플레이어 코인:" +GameManager.Instance.Coin);
+                GameManager.Instance.PlayerStat.Coin += 10;
+                Debug.Log("플레이어 코인:" +GameManager.Instance.PlayerStat.Coin);
                 Destroy(gameObject);
             }
 
             else if (gameObject.tag == "HP")
             {
-                GameManager.Instance.PlayerHp += 10;
-                Debug.Log("플레이어 HP:" + GameManager.Instance.PlayerHp);
+                GameManager.Instance.PlayerStat.Hp += 10;
+                Debug.Log("플레이어 HP:" + GameManager.Instance.PlayerStat.Hp);
                 Destroy(gameObject);
 
             }

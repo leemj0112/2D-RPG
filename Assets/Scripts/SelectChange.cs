@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,8 +46,8 @@ public class SelectChange : MonoBehaviour
     {
         GameStart.SetActive(true);
         isPlayButtonClicked = true;
-        GameManager.Instance.ChararterName = Charcters[charindex].name;
-        //CharactorName = Charcters[charindex].name;
+        Define.Player player = (Define.Player)Enum.Parse(typeof(Define.Player), Charcters[charindex].name);
+        GameManager.Instance.SelectPalyer= player;
     }
 
     public void selectCharaterRtn(string btnNase)
