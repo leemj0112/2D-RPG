@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class Charator : MonoBehaviour
 {
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rigidBody2D;
-    private AudioSource audioSource;
+    private Animator animator; //애니메이터
+    private Rigidbody2D rigidBody2D; //중력
+    private AudioSource audioSource; //소리
 
-    public AudioClip JumpClip;
+    public AudioClip JumpClip; //점프 소리
 
-    public float Speed = 4f;
-    public float JumpPower = 6f;
+    public float Speed = 4f; //속도
+    public float JumpPower = 6f; //점프 높이
 
+    //bool 목록
     private bool isFloor;
     private bool isLadder;
     private bool isClimbing;
     private float inputVertical;
-
     private bool JustAttack, JustJump;
 
+    //공격 목록
     public GameObject AttackObj;
     public float AttckSpeed = 3f;
     public AudioClip AttackClip;
 
+    //캐릭터 콜라이더 반전
     private bool faceright = true;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        //spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
     }
