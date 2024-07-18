@@ -47,6 +47,12 @@ public class Charator : MonoBehaviour
         Attack();
         Climbing();
     }
+
+    public void AttackAnimation()
+    {
+        animator.SetTrigger("Attack");
+    }
+
     //사다리타기 코드
     private void ClimbingCheck()
     {

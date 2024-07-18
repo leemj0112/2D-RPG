@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79db17ce79511c4ca5b5528a44c060b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectPalyer: 2
+  SelectPalyer: 0
   UserID: aaa
   PlayerStat:
     Hp: 100
@@ -4558,6 +4558,10 @@ MonoBehaviour:
   SkillExplainUI: {fileID: 298919865}
   SkiilIamge: {fileID: 1264924185}
   SkiilText: {fileID: 1876065512}
+  Skills:
+  - {fileID: 796271064}
+  - {fileID: 579726692}
+  - {fileID: 1001638292}
 --- !u!1 &733146867
 GameObject:
   m_ObjectHideFlags: 0
